@@ -1,0 +1,11 @@
+<!-- pongo una card dck --> 
+
+<div class="card-deck">
+    <!-- un ngFor de app-episodio que 
+        es el el selctor de  episodido.comopnet.ts --> 
+
+    <app-episodio *ngFor="let episodio of episodios"
+        [episodio]="episodio">
+
+    </app-episodio>
+  </div>

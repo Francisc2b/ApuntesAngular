@@ -1,0 +1,11 @@
+<div class="row mt-1">
+    <div class="col-2">
+        <img style="width:50%" [src]="empleado.foto()" class="rounded-circle">
+    </div>
+    <div class="col-7">
+        <h4>{{empleado.nombreCompleto()}}</h4>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-primary" (click)="desasignar()">Quitar del Proyecto</button>
+    </div>
+</div>

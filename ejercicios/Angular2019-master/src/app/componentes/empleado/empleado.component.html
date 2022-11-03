@@ -1,0 +1,23 @@
+<!-- incluyo esta tarjeta de Bootstrap --> 
+<div class="card text-center" style="width: 18rem;">
+    
+    <!--<img *ngIf="empleado.sexo == 'V'" src="https://randomuser.me/api/portraits/men/{{empleado.id}}.jpg" class="card-img-top mt-2">
+    <img *ngIf="empleado.sexo != 'V'" src="https://randomuser.me/api/portraits/women/{{empleado.id}}.jpg" class="card-img-top mt-2">
+    -->
+    <ng-container *ngIf="empleado.sexo == 'V'; else mujerTemplate">
+            <img src="https://randomuser.me/api/portraits/men/{{empleado.id}}.jpg" class="card-img-top mt-2">
+    </ng-container>
+    <ng-template #mujerTemplate>
+            <img src="https://randomuser.me/api/portraits/women/{{empleado.id}}.jpg" class="card-img-top mt-2">
+    </ng-template>
+    <div class="card-body">
+        <!-- //mediante intrpolacion {{}}accedo a las propiedades del empleado --> 
+        <!-- // en este caso empleado.components.ts --> 
+        <h5 class="card-title">{{empleado.nombreCompleto()}}</h5>
+        <p class="card-text">Departamento de {{empleado.departamento}}</p>
+
+        <!-- mediante click llamo al metodo para que se qcambie o no la visibilidad --> 
+
+        <button class="btn btn-primary" (click)="verDetalles()">Ver Detalles</button>
+    </div>
+</div>

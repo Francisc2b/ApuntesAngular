@@ -1,0 +1,14 @@
+<!-- introduzco una card colum --> 
+<div class="card-columns">
+    <!-- mediante una directiva ngFor  quiero un componente app-noticia
+     que ponga en noti declarada aqui todas las noticas que haya
+    en noticia.component.ts el input [noticia] le asigno noti y la posicion
+    pos
+    -->    
+
+    <app-noticia *ngFor="let noti of noticias; let pos=index"
+        [noticia]="noti" [pos]="pos">
+    
+    </app-noticia>
+</div>
+

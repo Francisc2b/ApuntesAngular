@@ -1,0 +1,18 @@
+<div class="card" ">
+    <ng-contaniner *ngIf="programa.image; else elseTemplate">
+
+        <!-- 1º cambio la propiedad src  src="..."   para que se vea la imagen  
+      [src]="episodio.show.image.medium"
+    --> 
+      <img [src]="programa.image.original" style="width: 200px;">
+      </ng-contaniner>      
+    
+    <div class="card-body">
+        <h5 class="card-title">{{programa.name}}</h5>
+        <h5 class="card-title">{{programa.type}}</h5>
+        <!-- //convertir inner html para poder visualizar --> 
+
+      <p class="card-text"[innerHTML]="programa.summary"></p>
+      <a [routerLink]= "['']" class="btn btn-primary">Vovler</a>
+    </div>
+  </div>

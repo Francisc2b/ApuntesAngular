@@ -1,0 +1,44 @@
+<form>    
+    <div class="form-group">
+        <label for="type">Tipo</label>
+        <!-- incluyo la directiba ngmodel para enlazar  
+        [(ngModel)]="busqueda.type"-->
+
+      <select class="select custom-select" [(ngModel)]="busqueda.type" id ="type" name="type">
+        <option value="artist">Artista</option>
+        <option value="album">Album</option>
+        <option value="track">Cancion</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="q">Busqueda</label>
+                <!-- required para hacer que una busqueda sea obligatoria  -->
+        <input type="text" required #q=@ngModel [(ngModel)]="busqueda.q"class="form-control" id="q" name="q">
+        <!-- este div esta oculto si no hay errores -->
+        <div [hidden]="!q.errors?.required || !nombre.touched" class="mt-2 alert alert-danger">El nombre es obligatorio></div>
+    </div>
+    <div class="form-group">
+        <label for="market">Mercado</label>
+      <select class="select custom-select" [(ngModel)]="busqueda.market"id ="market">
+        <option value="ES">España</option>
+        <option value="US">Estado Unidos</option>
+        <option value="UK">Reino Unido</option>
+      </select>
+    </div>
+    <div class="form-group">
+        <label for="limit">Numero de resultados</label>
+        <input type="number" #numr [(ngModel)]="busqueda.limit" max="50" form-control" id="limit" name="limit">
+    </div>
+    <div class="form-group">
+        <label for="offset">Desplazamiento</label>
+        <input type="number" [(ngModel)]="busqueda.offset" max="50" form-control" id="offset"name="offset">
+    </div>
+    <div class="form-group">
+        <input type="checkbox" value="audio" [(ngModel)]="busqueda.include_external" name="include_external">Incluir resultados externos
+        <button type="submit" class="btn btn-primary" [disabled]="!formulario.valid">Buscar</button>
+    </div>
+</form>
+
+
+      
+    

@@ -1,0 +1,28 @@
+<div class="card" style="width: 18rem;">
+
+  <!-- 2º ngif si hay imagen
+  <ng-contaniner *ngIf="expression; else elseTemplate">--> 
+    <ng-contaniner *ngIf="episodio.show.image; else elseTemplate">
+
+      <!-- 1º cambio la propiedad src  src="..."   para que se vea la imagen  
+    [src]="episodio.show.image.medium"
+  --> 
+    <img [src]="episodio.show.image.medium" class="card-img-top" alt="...">
+    </ng-contaniner>
+
+    <!-- 3º si no hay iamgen muestro estp  --> 
+
+    <ng-template #elseTemplate>
+
+    </ng-template>
+  
+    <div class="card-body">
+      <h5 class="card-title">{{episodio.name}}</h5>
+      <h4>{{episodio.show.name}}</h4>
+                  <!-- de esta manera el html lo formateamos --> 
+      <p class="card-text" [innerHtml]="episodio.summary"></p>
+      <!-- 4º modifico esta linea por router link  
+      <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <a [routerLink]="['/show', episodio.show.id]" class="btn btn-primary">Ver Programa</a>
+    </div>
+  </div>

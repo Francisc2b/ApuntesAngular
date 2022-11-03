@@ -1,0 +1,19 @@
+<div class="card">
+    <ng-container *ngIf="noticia.foto != null; else elseTemplate">
+      <img class="card-img-top" [src]="noticia.foto" alt="Card image cap">  
+    </ng-container>
+    <ng-template #elseTemplate>
+      <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Noimage.svg/739px-Noimage.svg.png" alt="Card image cap">
+    </ng-template>
+    <div class="card-body">
+      <!-- de la noticia cojo el titulo --> 
+
+      <h5 class="card-title">{{noticia.titulo}}</h5>
+      <!-- incluyo [innerHTML] asi no muestra el texxto notirca como html sino como texto  --> 
+
+      <p [innerHTML]="noticia.texto"></p>
+      <!-- se llama la metodo que se desea al asignar (click)  en noticiadetalle.component.ts--> 
+
+      <button class="btn btn-primary" (click)="volver()">Volver</button>
+    </div>
+  </div>
