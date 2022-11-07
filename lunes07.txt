@@ -1,0 +1,34 @@
+añadir liberias en angular
+
+npm install bootstrap --save
+
+modificar angular.json linea 26 para los css
+
+
+modificar con esto
+
+			"styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+          },
+
+
+
+
+
+ para mejorar el uso de jquer
+ npm install @popperjs/core --save
+ 
+ 
+ EMPAQUETAR LA APLICACION
+ ng build
+ 
+ copiar esta carpeta en esta ruta que ha creado
+ C:\Users\alumno\git\angular\mi-app\dist
+ y esto es lo que se entrega para instalar en apache
