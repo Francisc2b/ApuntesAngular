@@ -32,3 +32,13 @@ modificar con esto
  copiar esta carpeta en esta ruta que ha creado
  C:\Users\alumno\git\angular\mi-app\dist
  y esto es lo que se entrega para instalar en apache
+ 
+ 
+ 
+import localeEs from "@angular/common/locales/es";
+
+ providers: [
+    { provide: LOCALE_ID, useValue: 'es'},
+  ],
+  
+  ydfgh
