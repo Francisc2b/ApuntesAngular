@@ -38,9 +38,4 @@ modificar con esto
 import localeEs from "@angular/common/locales/es";
 
  providers: [
-    { provide: LOCALE_ID, useValue: 'es'},
-  ],
-  
- 
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
-asds
+    { provide: LOCALE_ID, useValue: 'es'}
